@@ -1,5 +1,5 @@
 ﻿using System;
 
 string name;
-name = "User";
+name = Console.ReadLine();
 Console.WriteLine("Hi " + name);
