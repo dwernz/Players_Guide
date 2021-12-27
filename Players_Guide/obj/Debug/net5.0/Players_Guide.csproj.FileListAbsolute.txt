@@ -1,0 +1,16 @@
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.exe
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.deps.json
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.runtimeconfig.json
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.runtimeconfig.dev.json
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.dll
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\ref\Players_Guide.dll
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\bin\Debug\net5.0\Players_Guide.pdb
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.csprojAssemblyReference.cache
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.AssemblyInfoInputs.cache
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.AssemblyInfo.cs
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.csproj.CoreCompileInputs.cache
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.dll
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\ref\Players_Guide.dll
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.pdb
+C:\Users\dwern\source\repos\Players_Guide\Players_Guide\obj\Debug\net5.0\Players_Guide.genruntimeconfig.cache
