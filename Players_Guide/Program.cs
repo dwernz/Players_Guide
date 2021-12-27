@@ -1,5 +1,8 @@
 ﻿using System;
 
 string name;
+
+Console.WriteLine("Bread is ready.");
+Console.WriteLine("Who is the bread for?");
 name = Console.ReadLine();
-Console.WriteLine("Hi " + name);
+Console.WriteLine("Noted: " + name + " got bread");
