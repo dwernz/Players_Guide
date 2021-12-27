@@ -20,6 +20,24 @@ decimal revenueToDate = 4682134934321.54m; // 28-29 digits of precision, more ac
 
 bool isOpen = true; // True or False
 
+shopNumber = 2;
+items = 120;
+inventory = 42352345;
+sales = 43246235;
+salesToday = 126;
+itemsSoldToday = 52443;
+itemsSold = 2436423542;
+itemsAvaliable = 43543612341235;
+
+letter = 'B';
+shopName = "The Shop's Variable";
+
+revenueToday = 1543.92f;
+revenueYearToDate = 413252134.43;
+revenueToDate = 2154651234213.21m;
+
+isOpen = false;
+
 Console.WriteLine("Shop's number: " + shopNumber);
 Console.WriteLine("Different items in shop: " + items);
 Console.WriteLine("Number of items to sell: " + inventory);
