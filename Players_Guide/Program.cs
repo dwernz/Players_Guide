@@ -1,15 +1,37 @@
 ﻿using System;
 
-// Challenge: The Triangle Farmer
+// Challenge: The Four Sisters and the Duckbear
 
-Console.Write("Base: ");
-string baseOfTriangleString = Console.ReadLine();
-Console.Write("Height: ");
-string heightOfTrianleString = Console.ReadLine();
+Console.Write("How many chocolate eggs were gathered today? ");
+string chocolateEggsString = Console.ReadLine();
 
-double baseOfTriangle = Convert.ToDouble(baseOfTriangleString);
-double heightOfTriangle = Convert.ToDouble(heightOfTrianleString);
+int chocolateEggs = Convert.ToInt32(chocolateEggsString);
 
-double areaOfTriangle = (baseOfTriangle * heightOfTriangle) / 2;
+while (chocolateEggs < 0)
+{
+    Console.Write("Number must be positive.\nHow many chocolate eggs were gathered today? ");
+    chocolateEggsString = Console.ReadLine();
 
-Console.WriteLine("Area of Triangle: " + areaOfTriangle);
+    chocolateEggs = Convert.ToInt32(chocolateEggsString);
+}
+
+int sistersShare = chocolateEggs / 4;
+int duckbearShare = chocolateEggs % 4;
+
+if (sistersShare == 1)
+{
+    Console.WriteLine("Each sister should receive " + sistersShare + " chocolate egg.");
+}
+else
+{
+    Console.WriteLine("Each sister should receive " + sistersShare + " chocolate eggs.");
+}
+
+if (duckbearShare == 1)
+{
+    Console.WriteLine("The duckbear should receive " + duckbearShare + " chooclate egg.");
+}
+else
+{
+    Console.WriteLine("The duckbear should receive " + duckbearShare + " chooclate eggs.");
+}
