@@ -1,37 +1,22 @@
 ﻿using System;
 
-// Challenge: The Four Sisters and the Duckbear
+// Challenge: The Dominion of Kings
 
-Console.Write("How many chocolate eggs were gathered today? ");
-string chocolateEggsString = Console.ReadLine();
+Console.Write("How many provinces does the King rule? ");
+string provincesString = Console.ReadLine();
+Console.Write("How many duchies does the King rule? ");
+string duchiesString = Console.ReadLine();
+Console.Write("How many estates does the King rule? ");
+string estatesString = Console.ReadLine();
 
-int chocolateEggs = Convert.ToInt32(chocolateEggsString);
+int provinces = Convert.ToInt32(provincesString);
+int duchies = Convert.ToInt32(duchiesString);
+int estates = Convert.ToInt32(estatesString);
 
-while (chocolateEggs < 0)
-{
-    Console.Write("Number must be positive.\nHow many chocolate eggs were gathered today? ");
-    chocolateEggsString = Console.ReadLine();
+int estateTotal = estates * 1;
+int duchiesTotal = duchies * 3;
+int provinceTotal = provinces * 6;
 
-    chocolateEggs = Convert.ToInt32(chocolateEggsString);
-}
+int total = estateTotal + duchiesTotal + provinceTotal;
 
-int sistersShare = chocolateEggs / 4;
-int duckbearShare = chocolateEggs % 4;
-
-if (sistersShare == 1)
-{
-    Console.WriteLine("Each sister should receive " + sistersShare + " chocolate egg.");
-}
-else
-{
-    Console.WriteLine("Each sister should receive " + sistersShare + " chocolate eggs.");
-}
-
-if (duckbearShare == 1)
-{
-    Console.WriteLine("The duckbear should receive " + duckbearShare + " chooclate egg.");
-}
-else
-{
-    Console.WriteLine("The duckbear should receive " + duckbearShare + " chooclate eggs.");
-}
+Console.WriteLine("Total points for the King is " + total);
