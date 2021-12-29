@@ -1,32 +1,30 @@
 ﻿using System;
 
-// Challenge: The Dominion of Kings
+// Challenge: The Defense of Consolas
 
-Console.Title = "The Dominion of Kings";
+Console.Title = "The Defense of Consolas";
 
-Console.BackgroundColor = ConsoleColor.Yellow;
-Console.ForegroundColor = ConsoleColor.Black;
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-Console.Write("How many provinces does the King rule? ");
-string provincesString = Console.ReadLine();
+Console.Write("Target Row? ");
+string targetRowString = Console.ReadLine();
 Console.Clear();
-Console.Write("How many duchies does the King rule? ");
-string duchiesString = Console.ReadLine();
-Console.Clear();
-Console.Write("How many estates does the King rule? ");
-string estatesString = Console.ReadLine();
+Console.Write("Target Column? ");
+string targetColumnString = Console.ReadLine();
 Console.Clear();
 
-int provinces = Convert.ToInt32(provincesString);
-int duchies = Convert.ToInt32(duchiesString);
-int estates = Convert.ToInt32(estatesString);
+int targetRow = Convert.ToInt32(targetRowString);
+int targetColumn = Convert.ToInt32(targetColumnString);
 
-int estateTotal = estates * 1;
-int duchiesTotal = duchies * 3;
-int provinceTotal = provinces * 6;
+Console.Beep(500, 500);
+Console.Beep(400, 500);
+Console.Beep(300, 250);
 
-int total = estateTotal + duchiesTotal + provinceTotal;
-
-Console.WriteLine($"Total points for the King is {total}");
+Console.WriteLine($"Deploy to:");
+Console.WriteLine($"({targetRow}, {targetColumn - 1})");
+Console.WriteLine($"({targetRow - 1}, {targetColumn}");
+Console.WriteLine($"({targetRow}, {targetColumn + 1})");
+Console.WriteLine($"({targetRow + 1}, {targetColumn})");
