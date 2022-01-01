@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Challenge: Buying Inventory
+// Challenge: Discounted Inventory
 
-Console.Title = "Buying Inventory";
+Console.Title = "Discounted Inventory";
 
 Console.BackgroundColor = ConsoleColor.Blue;
 Console.ForegroundColor = ConsoleColor.White;
@@ -21,6 +21,9 @@ Console.Write("What number do you want to see the price of? ");
 
 string choiceString = Console.ReadLine();
 int choice = Convert.ToInt32(choiceString);
+
+Console.WriteLine("What is your name? ");
+string userName = Console.ReadLine();
 
 string itemName = "";
 int price = 0;
@@ -58,6 +61,11 @@ switch (choice)
     default:
         Console.WriteLine("Item not found");
         break;
+}
+
+if (userName.Equals("Daniel"))
+{
+    price /= 2;
 }
 
 Console.WriteLine(itemName + " costs " + price + " gold.");
