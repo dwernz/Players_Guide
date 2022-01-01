@@ -1,30 +1,25 @@
 ﻿using System;
 
-// Challenge: The Defense of Consolas
+// Challenge: Repairing the Clocktower
 
-Console.Title = "The Defense of Consolas";
+Console.Title = "Repairing the Clocktower";
 
 Console.BackgroundColor = ConsoleColor.Blue;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-Console.Write("Target Row? ");
-string targetRowString = Console.ReadLine();
-Console.Clear();
-Console.Write("Target Column? ");
-string targetColumnString = Console.ReadLine();
-Console.Clear();
+Console.Write("Input a number: ");
 
-int targetRow = Convert.ToInt32(targetRowString);
-int targetColumn = Convert.ToInt32(targetColumnString);
+string numberString = Console.ReadLine();
 
-Console.Beep(500, 500);
-Console.Beep(400, 500);
-Console.Beep(300, 250);
+int number = Convert.ToInt32(numberString);
 
-Console.WriteLine($"Deploy to:");
-Console.WriteLine($"({targetRow}, {targetColumn - 1})");
-Console.WriteLine($"({targetRow - 1}, {targetColumn}");
-Console.WriteLine($"({targetRow}, {targetColumn + 1})");
-Console.WriteLine($"({targetRow + 1}, {targetColumn})");
+if (number % 2 == 0)
+{
+    Console.WriteLine("Tick");
+}
+else
+{
+    Console.WriteLine("Tock");
+}
