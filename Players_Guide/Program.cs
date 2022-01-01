@@ -1,78 +1,63 @@
 ﻿using System;
 
-// Challenge: Watchtower
+// Challenge: Buying Inventory
 
-Console.Title = "Watchtower";
+Console.Title = "Buying Inventory";
 
 Console.BackgroundColor = ConsoleColor.Blue;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-Console.Write("Enter X coordinate: ");
-string xString = Console.ReadLine();
+Console.WriteLine("The following items are available:");
+Console.WriteLine("1 - Rope");
+Console.WriteLine("2 - Torches");
+Console.WriteLine("3 - Climbing Equipment");
+Console.WriteLine("4 - Clean Water");
+Console.WriteLine("5 - Machete");
+Console.WriteLine("6 - Canoe");
+Console.WriteLine("7 - Food Supplies");
+Console.Write("What number do you want to see the price of? ");
 
-Console.Write("Enter Y coordinate: ");
-string yString = Console.ReadLine();
+string choiceString = Console.ReadLine();
+int choice = Convert.ToInt32(choiceString);
 
-int x = Convert.ToInt32(xString);
-int y = Convert.ToInt32(yString);
+string itemName = "";
+int price = 0;
 
-string direction = "";
-
-// determine the direction of the enemy
-if (x < 0)
+switch (choice)
 {
-    if (y > 0)
-    {
-        direction = "NW";
-    }
-    else if (y == 0)
-    {
-        direction = "W";
-    }
-    else if (y < 0)
-    {
-        direction = "SW";
-    }
-}
-else if (x == 0)
-{
-    if (y > 0)
-    {
-        direction = "N";
-    }
-    else if (y == 0)
-    {
-        direction = "!";
-    }
-    else if (y < 0)
-    {
-        direction = "S";
-    }
-}
-else if (x > 0)
-{
-    if (y > 0)
-    {
-        direction = "NE";
-    }
-    else if (y == 0)
-    {
-        direction = "E";
-    }
-    else if (y < 0)
-    {
-        direction = "SE";
-    }
+    case 1:
+        itemName = "Rope";
+        price = 10;
+        break;
+    case 2:
+        itemName = "Torches";
+        price = 15;
+        break;
+    case 3:
+        itemName = "Climbing Equipment";
+        price = 25;
+        break;
+    case 4:
+        itemName = "Clean Water";
+        price = 1;
+        break;
+    case 5:
+        itemName = "Machete";
+        price = 20;
+        break;
+    case 6:
+        itemName = "Canoe";
+        price = 200;
+        break;
+    case 7:
+        itemName = "Food Supplies";
+        price = 1;
+        break;
+    default:
+        Console.WriteLine("Item not found");
+        break;
 }
 
-// Output message of where the enemy is
-if (direction != "!")
-{
-    Console.WriteLine("The enemy is to the " + direction + "!");
-}
-else
-{
-    Console.WriteLine("The enemy is here!");
-}
+Console.WriteLine(itemName + " costs " + price + " gold.");
