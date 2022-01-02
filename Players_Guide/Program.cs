@@ -1,71 +1,44 @@
 ﻿using System;
 
-// Challenge: Discounted Inventory
+// Challenge: The Prototype
 
-Console.Title = "Discounted Inventory";
+Console.Title = "The Prototype";
 
 Console.BackgroundColor = ConsoleColor.Blue;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-Console.WriteLine("The following items are available:");
-Console.WriteLine("1 - Rope");
-Console.WriteLine("2 - Torches");
-Console.WriteLine("3 - Climbing Equipment");
-Console.WriteLine("4 - Clean Water");
-Console.WriteLine("5 - Machete");
-Console.WriteLine("6 - Canoe");
-Console.WriteLine("7 - Food Supplies");
-Console.Write("What number do you want to see the price of? ");
+int tries = 1;
 
-string choiceString = Console.ReadLine();
-int choice = Convert.ToInt32(choiceString);
+Console.Write("Enter a number between 0 and 100: ");
+int guess = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("What is your name? ");
-string userName = Console.ReadLine();
+Random randomNumber = new Random();
+int number = randomNumber.Next(0, 100);
 
-string itemName = "";
-int price = 0;
+bool isCorrect = false;
 
-switch (choice)
+while (!isCorrect)
 {
-    case 1:
-        itemName = "Rope";
-        price = 10;
+    if (number == guess)
+    {
+        isCorrect = true;
         break;
-    case 2:
-        itemName = "Torches";
-        price = 15;
-        break;
-    case 3:
-        itemName = "Climbing Equipment";
-        price = 25;
-        break;
-    case 4:
-        itemName = "Clean Water";
-        price = 1;
-        break;
-    case 5:
-        itemName = "Machete";
-        price = 20;
-        break;
-    case 6:
-        itemName = "Canoe";
-        price = 200;
-        break;
-    case 7:
-        itemName = "Food Supplies";
-        price = 1;
-        break;
-    default:
-        Console.WriteLine("Item not found");
-        break;
+    }
+    else if (number > guess)
+    {
+        Console.WriteLine(guess + " is too low");
+    }
+    else if (number < guess)
+    {
+        Console.WriteLine(guess + " is too high");
+    }
+
+    tries++;
+
+    Console.WriteLine("What is your next guess? ");
+    guess = Convert.ToInt32(Console.ReadLine());
 }
 
-if (userName.Equals("Daniel"))
-{
-    price /= 2;
-}
-
-Console.WriteLine(itemName + " costs " + price + " gold.");
+Console.WriteLine("You guessed the number, "+ number +"! It took " + tries + " tries.");
