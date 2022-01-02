@@ -4,41 +4,33 @@
 
 Console.Title = "The Prototype";
 
-Console.BackgroundColor = ConsoleColor.Blue;
+Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-int tries = 1;
-
-Console.Write("Enter a number between 0 and 100: ");
-int guess = Convert.ToInt32(Console.ReadLine());
-
-Random randomNumber = new Random();
-int number = randomNumber.Next(0, 100);
-
-bool isCorrect = false;
-
-while (!isCorrect)
+for (int counter = 1; counter <= 100; counter++)
 {
-    if (number == guess)
+    if (counter % 3 == 0 && counter % 5 == 0)
     {
-        isCorrect = true;
-        break;
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine(counter + ": Fire/Electric");
     }
-    else if (number > guess)
+    else if (counter % 3 == 0)
     {
-        Console.WriteLine(guess + " is too low");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(counter + ": Fire");
     }
-    else if (number < guess)
+    else if (counter % 5 == 0)
     {
-        Console.WriteLine(guess + " is too high");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(counter + ": Electric");
     }
-
-    tries++;
-
-    Console.WriteLine("What is your next guess? ");
-    guess = Convert.ToInt32(Console.ReadLine());
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine(counter + ": Normal");
+    }
 }
 
-Console.WriteLine("You guessed the number, "+ number +"! It took " + tries + " tries.");
+Console.ForegroundColor = ConsoleColor.White;
