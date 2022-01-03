@@ -1,38 +1,31 @@
 ﻿using System;
 
-// Challenge: The Replicator of D'To
-
-Console.Title = "The Replicator of D'To";
+// Challenge: The Laws of Freach
 
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-int[] array1 = new int[5];
+int[] array = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
 
-for (int counter = 1; counter <= 5; counter++)
+int currentMinimum = int.MaxValue; // Start higher than anything in the array.
+
+foreach (int i in array)
 {
-    Console.Write("Enter a number to be stored in the array: ");
-    array1[counter - 1] = Convert.ToInt32(Console.ReadLine()); 
+    if (currentMinimum > i)
+    {
+        currentMinimum = i;
+    }
 }
 
-int[] array2 = new int[5];
+Console.WriteLine("Minimum: " + currentMinimum);
 
-for (int counter = 0; counter <= 4; counter++)
+int total = 0;
+
+foreach (int i in array)
 {
-    array2[counter] = array1[counter];
+    total += i;
 }
 
-Console.Write("Array1: ");
-
-foreach (int i in array1)
-{
-    Console.Write("{0} ", i);
-}
-
-Console.Write("\nArray2: ");
-foreach (int i in array2)
-{
-    Console.Write("{0} ", i);
-}
+Console.WriteLine("Average: " + ((double) total / array.Length));
