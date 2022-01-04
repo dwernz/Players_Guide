@@ -1,33 +1,24 @@
 ﻿using System;
 
-// Challenge: Taking a number
+// Challenge: Countdown
 
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-Console.WriteLine("AskForNumber result: " + AskForNumber("What is 2 + 2 ?"));
-Console.WriteLine("AskForNumberInRange result: " + AskForNumberInRange("Type a number between 1 and 10", 1, 10));
+Countdown(10);
 
-int AskForNumber(string text)
+int Countdown(int number)
 {
-    Console.WriteLine(text + " ");
-    int number = Convert.ToInt32(Console.ReadLine());
-
-    return number;
-}
-
-int AskForNumberInRange(string text, int min, int max)
-{
-    Console.WriteLine(text + " ");
-    int number = Convert.ToInt32(Console.ReadLine());
-
-    while (number > max || number < min)
+    if (number == 1)
     {
-        Console.WriteLine("Number outside of range, please enter a number between " + min + " and " + max + ": ");
-        number = Convert.ToInt32(Console.ReadLine());
+        Console.Write(1);
+        return 1;
     }
-
-    return number;
+    else
+    {
+        Console.Write(number + " ");
+        return Countdown(number - 1);
+    }
 }
