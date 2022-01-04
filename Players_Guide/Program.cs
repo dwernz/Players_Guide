@@ -1,31 +1,33 @@
 ﻿using System;
 
-// Challenge: The Laws of Freach
+// Challenge: Taking a number
 
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-int[] array = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+Console.WriteLine("AskForNumber result: " + AskForNumber("What is 2 + 2 ?"));
+Console.WriteLine("AskForNumberInRange result: " + AskForNumberInRange("Type a number between 1 and 10", 1, 10));
 
-int currentMinimum = int.MaxValue; // Start higher than anything in the array.
-
-foreach (int i in array)
+int AskForNumber(string text)
 {
-    if (currentMinimum > i)
+    Console.WriteLine(text + " ");
+    int number = Convert.ToInt32(Console.ReadLine());
+
+    return number;
+}
+
+int AskForNumberInRange(string text, int min, int max)
+{
+    Console.WriteLine(text + " ");
+    int number = Convert.ToInt32(Console.ReadLine());
+
+    while (number > max || number < min)
     {
-        currentMinimum = i;
+        Console.WriteLine("Number outside of range, please enter a number between " + min + " and " + max + ": ");
+        number = Convert.ToInt32(Console.ReadLine());
     }
+
+    return number;
 }
-
-Console.WriteLine("Minimum: " + currentMinimum);
-
-int total = 0;
-
-foreach (int i in array)
-{
-    total += i;
-}
-
-Console.WriteLine("Average: " + ((double) total / array.Length));
