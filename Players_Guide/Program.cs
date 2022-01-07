@@ -1,49 +1,71 @@
 ﻿using System;
 
-// Challenge: Simula's Test
-
-// Define an enumeration for the state of the chest.
-// Make a variable whose type is this new enumeration.
-// Write code to allow you to manipulate the chest with the lock, unlock, open, and close commands, but ensure that you don't transition between states that don't support it.
-// Loop forever, asking fo the next command
-
+// Challenge: Simula's Soups
 
 // Set Console attributes
-Console.Title = "Simula's Test";
+Console.Title = "Simula's Soups";
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.White;
 
 Console.Clear();
 
-ChestState currentState = ChestState.Locked;
+(SoupType type, MainIngredient ingredient, Seasoning seasoning)[] soups = new (SoupType, MainIngredient, Seasoning)[3];
 
-Console.WriteLine("Commands: unlock, open, close, lock\n");
-
-while (true)
+for (int index = 0; index < soups.Length; index++)
 {
-    Console.Write($"The chest is {currentState}. What do you want to do? ");
-
-    string input = Console.ReadLine();
-
-    if (currentState == ChestState.Locked && input == "unlock")
-    {
-        currentState = ChestState.Closed;
-    }
-
-    if (currentState == ChestState.Closed && input == "open")
-    {
-        currentState = ChestState.Open;
-    }
-
-    if (currentState == ChestState.Closed && input == "lock")
-    {
-        currentState = ChestState.Locked;
-    }
-
-    if (currentState == ChestState.Open && input == "close")
-    {
-        currentState = ChestState.Closed;
-    }
+    soups[index] = GetSoup();
 }
 
-enum ChestState { Open, Closed, Locked};
+foreach (var soup in soups)
+{
+    Console.WriteLine($"{soup.seasoning} {soup.ingredient} {soup.type}");
+}
+
+(SoupType, MainIngredient, Seasoning) GetSoup()
+{
+    SoupType type = GetSoupType();
+    MainIngredient ingredient = GetMainIngredient();
+    Seasoning seasoning = GetSeasoning();
+    return (type, ingredient, seasoning);
+}
+
+SoupType GetSoupType()
+{
+    Console.Write("Soup type (soup, stew, gumbo): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "soup" => SoupType.Soup,
+        "stew" => SoupType.Stew,
+        "gumbo" => SoupType.Gumbo
+    };
+}
+
+MainIngredient GetMainIngredient()
+{
+    Console.Write("Main ingredient (mushroom, chicken, carrot, potato): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "mushroom" => MainIngredient.Mushrooms,
+        "chicken" => MainIngredient.Chicken,
+        "carrot" => MainIngredient.Carrots,
+        "potato" => MainIngredient.Potatoes
+    };
+}
+
+Seasoning GetSeasoning()
+{
+    Console.Write("Seasoning (spicy, salty, sweet): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "spicy" => Seasoning.Spicy,
+        "salty" => Seasoning.Salty,
+        "sweet" => Seasoning.Sweet
+    };
+}
+
+enum SoupType { Soup, Stew, Gumbo};
+enum MainIngredient { Mushrooms, Chicken, Carrots, Potatoes};
+enum Seasoning { Spicy, Salty, Sweet};
